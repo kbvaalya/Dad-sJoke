@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2a2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    background-color: #9370a8;
+    padding: 40px;
+    color: #000;
+}
+
+.header h1 {
+    font-size: 52px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.content {
+    background-color: #f5c2f5;
+    padding: 60px 40px;
+    min-height: 450px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-generate {
+    background-color: #9370a8;
+    color: #000;
+    border: none;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: normal;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+}
+
+.btn-generate:hover {
+    background-color: #805a94;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-generate:active {
+    transform: translateY(0);
+}
+
+.btn-generate:disabled {
+    background-color: #b8a0c4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.joke-container {
+    flex: 1;
+    background-color: #b88bb8;
+    border-radius: 30px;
+    padding: 60px 50px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.joke-text {
+    font-size: 28px;
+    color: #000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.placeholder {
+    font-size: 28px;
+    color: #333;
+}
+
+.loading {
+    font-size: 24px;
+    color: #333;
+}
+
+.footer {
+    background-color: #9370a8;
+    padding: 30px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .btn-generate {
+        width: 100%;
+    }
+}
