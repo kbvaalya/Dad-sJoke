@@ -1,5 +1,14 @@
 const API_URL = 'https://icanhazdadjoke.com/';
 
+window.onload = () => {
+    const savedJoke = localStorage.getItem('lastJoke');
+    const jokeContainer = document.getElementById('jokeContainer');
+
+    if (savedJoke) {
+        jokeContainer.innerHTML = `<p class="joke-text">${savedJoke}</p>`;
+    }
+};
+
 async function generateJoke() {
     const jokeContainer = document.getElementById('jokeContainer');
     const generateBtn = document.getElementById('generateBtn');
@@ -11,7 +20,7 @@ async function generateJoke() {
         const response = await fetch(API_URL, {
             method: 'GET',
             headers: {
-                'Accept': 'application/json'   
+                'Accept': 'application/json'
             }
         });
 
@@ -25,11 +34,14 @@ async function generateJoke() {
             throw new Error('No joke found');
         }
 
+        localStorage.setItem('lastJoke', data.joke);
+
         jokeContainer.innerHTML = `
             <p class="joke-text">${data.joke}</p>
         `;
     } catch (error) {
         console.error(error);
+
         jokeContainer.innerHTML = `
             <p class="joke-text">Oops! Failed to load a joke. Try again.</p>
         `;
