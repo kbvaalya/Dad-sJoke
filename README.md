@@ -17,7 +17,7 @@ Dad's Joke Generator <br>
 - https://icanhazdadjoke.com API <br>
 
 Демонстрация <br>
-https://kbvaalya.github.io/dadjoke/ <br>
+https://kbvaalya.github.io/Dad-sJoke/ <br>
 
 Файлы проекта <br>
 index.html  <br>
